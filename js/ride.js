@@ -1,11 +1,11 @@
-/*global BackToTheRide _config*/
+/*global WildRydes _config*/
 
-var BackToTheRide = window.BackToTheRide || {};
-BackToTheRide.map = BackToTheRide.map || {};
+var WildRydes = window.WildRydes || {};
+WildRydes.map = WildRydes.map || {};
 
 (function rideScopeWrapper($) {
     var authToken;
-    BackToTheRide.authToken.then(function setAuthToken(token) {
+    WildRydes.authToken.then(function setAuthToken(token) {
         if (token) {
             authToken = token;
         } else {
@@ -47,7 +47,7 @@ BackToTheRide.map = BackToTheRide.map || {};
         displayUpdate(delorean.Name + ', driving your ' + delorean.Color + ' colored DeLorean ride, is on ' + pronoun + ' way.');
         animateArrival(function animateCallback() {
             displayUpdate(delorean.Name + ' has arrived. Time to travel');
-            BackToTheRide.map.unsetLocation();
+            WildRydes.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');
         });
@@ -56,9 +56,9 @@ BackToTheRide.map = BackToTheRide.map || {};
     // Register click handler for #request button
     $(function onDocReady() {
         $('#request').click(handleRequestClick);
-        $(BackToTheRide.map).on('pickupChange', handlePickupChanged);
+        $(WildRydes.map).on('pickupChange', handlePickupChanged);
 
-        BackToTheRide.authToken.then(function updateAuthMessage(token) {
+        WildRydes.authToken.then(function updateAuthMessage(token) {
             if (token) {
                 displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
                 $('.authToken').text(token);
@@ -77,28 +77,28 @@ BackToTheRide.map = BackToTheRide.map || {};
     }
 
     function handleRequestClick(event) {
-        var pickupLocation = BackToTheRide.map.selectedPoint;
+        var pickupLocation = WildRydes.map.selectedPoint;
         event.preventDefault();
         requestRide(pickupLocation);
     }
 
     function animateArrival(callback) {
-        var dest = BackToTheRide.map.selectedPoint;
+        var dest = WildRydes.map.selectedPoint;
         var origin = {};
 
-        if (dest.latitude > BackToTheRide.map.center.latitude) {
-            origin.latitude = BackToTheRide.map.extent.minLat;
+        if (dest.latitude > WildRydes.map.center.latitude) {
+            origin.latitude = WildRydes.map.extent.minLat;
         } else {
-            origin.latitude = BackToTheRide.map.extent.maxLat;
+            origin.latitude = WildRydes.map.extent.maxLat;
         }
 
-        if (dest.longitude > BackToTheRide.map.center.longitude) {
-            origin.longitude = BackToTheRide.map.extent.minLng;
+        if (dest.longitude > WildRydes.map.center.longitude) {
+            origin.longitude = WildRydes.map.extent.minLng;
         } else {
-            origin.longitude = BackToTheRide.map.extent.maxLng;
+            origin.longitude = WildRydes.map.extent.maxLng;
         }
 
-        BackToTheRide.map.animate(origin, dest, callback);
+        WildRydes.map.animate(origin, dest, callback);
     }
 
     function displayUpdate(text) {

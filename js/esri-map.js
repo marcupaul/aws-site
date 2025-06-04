@@ -1,7 +1,7 @@
-/*global BackToTheRide _config*/
+/*global WildRydes _config*/
 
-var BackToTheRide = window.BackToTheRide || {};
-BackToTheRide.map = BackToTheRide.map || {};
+var WildRydes = window.WildRydes || {};
+WildRydes.map = WildRydes.map || {};
 
 (function esriMapScopeWrapper($) {
     require([
@@ -18,7 +18,7 @@ BackToTheRide.map = BackToTheRide.map || {};
         Graphic, Point, TextSymbol,
         PictureMarkerSymbol, webMercatorUtils
     ) {
-        var wrMap = BackToTheRide.map;
+        var wrMap = WildRydes.map;
 
         var map = new Map({ basemap: 'gray-vector' });
 

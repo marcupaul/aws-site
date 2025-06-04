@@ -1,6 +1,6 @@
-/*global BackToTheRide _config AmazonCognitoIdentity AWSCognito*/
+/*global WildRydes _config AmazonCognitoIdentity AWSCognito*/
 
-var BackToTheRide = window.BackToTheRide || {};
+var WildRydes = window.WildRydes || {};
 
 (function scopeWrapper($) {
     var signinUrl = '/signin.html';
@@ -25,11 +25,11 @@ var BackToTheRide = window.BackToTheRide || {};
         AWSCognito.config.region = _config.cognito.region;
     }
 
-    BackToTheRide.signOut = function signOut() {
+    WildRydes.signOut = function signOut() {
         userPool.getCurrentUser().signOut();
     };
 
-    BackToTheRide.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
+    WildRydes.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
         var cognitoUser = userPool.getCurrentUser();
 
         if (cognitoUser) {
