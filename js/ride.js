@@ -44,7 +44,7 @@ WildRydes.map = WildRydes.map || {};
         console.log('Response received from API: ', result);
         delorean = result.DeLorean;
         pronoun = delorean.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(delorean.Name + ', driving your ' + delorean.Color + ' DeLorean ride, is on ' + pronoun + ' way.');
+        displayUpdate(delorean.Name + ', driving your ' + delorean.Color + ' colored DeLorean ride, is on ' + pronoun + ' way.');
         animateArrival(function animateCallback() {
             displayUpdate(delorean.Name + ' has arrived. Time to travel');
             WildRydes.map.unsetLocation();
@@ -72,7 +72,7 @@ WildRydes.map = WildRydes.map || {};
 
     function handlePickupChanged() {
         var requestButton = $('#request');
-        requestButton.text('Request DeLorean');
+        requestButton.text('Request Ride');
         requestButton.prop('disabled', false);
     }
 
