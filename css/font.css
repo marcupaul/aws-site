@@ -1,12 +1,3 @@
-@font-face {
-    font-family: "Courier New";
-    font-style: normal;
-    font-weight: 400;
-    src: url("../fonts/cour.ttf") format("ttf");
-}
-@font-face {
-    font-family: "Courier New";
-    font-style: normal;
-    font-weight: 700;
-    src: url("../fonts/cour.ttf") format("ttf");
+body {
+    font-family: 'Courier New', monospace;
 }
