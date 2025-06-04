@@ -46,7 +46,7 @@ WildRydes.map = WildRydes.map || {};
         pronoun = delorean.Gender === 'Male' ? 'his' : 'her';
         displayUpdate(delorean.Name + ', driving your ' + delorean.Color + ' colored DeLorean ride, is on ' + pronoun + ' way.');
         animateArrival(function animateCallback() {
-            displayUpdate(delorean.Name + ' has arrived. Time to travel');
+            displayUpdate(delorean.Name + ' has arrived. Time to travel.');
             WildRydes.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');
