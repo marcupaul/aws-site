@@ -1,12 +1,12 @@
 @font-face {
-    font-family: "fairplex-wide";
+    font-family: "Courier New";
     font-style: normal;
     font-weight: 400;
-    src: url("../fonts/fairplex-wide-n4.woff") format("woff2");
+    src: url("../fonts/cour.ttf") format("ttf");
 }
 @font-face {
-    font-family: "fairplex-wide";
+    font-family: "Courier New";
     font-style: normal;
     font-weight: 700;
-    src: url("../fonts/fairplex-wide-n7.woff") format("woff2");
+    src: url("../fonts/cour.ttf") format("ttf");
 }
