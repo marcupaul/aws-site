@@ -1,3 +1,12 @@
-body {
-    font-family: 'Courier New', monospace;
+@font-face {
+    font-family: "Monaspace Argon";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/MonaspaceArgon-Regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Monaspace Argon";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/MonaspaceArgon-SemiBold.woff2") format("woff2");
 }
