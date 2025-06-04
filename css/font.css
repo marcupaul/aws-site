@@ -1,12 +1,12 @@
 @font-face {
-    font-family: "Monaspace Argon";
+    font-family: "Monaspace Neon";
     font-style: normal;
     font-weight: 400;
-    src: url("../fonts/MonaspaceArgon-Regular.woff2") format("woff2");
+    src: url("../fonts/MonaspaceNeon-Regular.woff2") format("woff2");
 }
 @font-face {
-    font-family: "Monaspace Argon";
+    font-family: "Monaspace Neon";
     font-style: normal;
     font-weight: 600;
-    src: url("../fonts/MonaspaceArgon-SemiBold.woff2") format("woff2");
+    src: url("../fonts/MonaspaceNeon-SemiBold.woff2") format("woff2");
 }
