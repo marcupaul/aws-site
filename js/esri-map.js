@@ -26,7 +26,7 @@ WildRydes.map = WildRydes.map || {};
             center: [23.621368, 46.773350],
             container: 'map',
             map: map,
-            zoom: 18
+            zoom: 16
         });
 
         var pinSymbol = new TextSymbol({
