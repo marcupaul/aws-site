@@ -39,9 +39,9 @@ WildRydes.map = WildRydes.map || {};
         });
 
         var unicornSymbol = new PictureMarkerSymbol({
-            url: '/images/unicorn-icon.png',
-            width: '25px',
-            height: '25px'
+            url: '/images/delorean-icon.png',
+            width: '50px',
+            height: '50px'
         });
 
         var pinGraphic;
