@@ -15,7 +15,7 @@ WildRydes.map = WildRydes.map || {};
         alert(error);
         window.location.href = '/signin.html';
     });
-    function requestUnicorn(pickupLocation) {
+    function requestRide(pickupLocation) {
         $.ajax({
             method: 'POST',
             url: _config.api.invokeUrl + '/ride',
@@ -33,20 +33,20 @@ WildRydes.map = WildRydes.map || {};
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
-                alert('An error occured when requesting your unicorn:\n' + jqXHR.responseText);
+                alert('An error occured when requesting your ride:\n' + jqXHR.responseText);
             }
         });
     }
 
     function completeRequest(result) {
-        var unicorn;
+        var delorean;
         var pronoun;
         console.log('Response received from API: ', result);
-        unicorn = result.Unicorn;
-        pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.');
+        delorean = result.DeLorean;
+        pronoun = delorean.Gender === 'Male' ? 'his' : 'her';
+        displayUpdate(delorean.Name + ', driving your ' + delorean.Color + ' DeLorean ride, is on ' + pronoun + ' way.');
         animateArrival(function animateCallback() {
-            displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
+            displayUpdate(delorean.Name + ' has arrived. Time to travel');
             WildRydes.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');
@@ -72,14 +72,14 @@ WildRydes.map = WildRydes.map || {};
 
     function handlePickupChanged() {
         var requestButton = $('#request');
-        requestButton.text('Request Unicorn');
+        requestButton.text('Request DeLorean');
         requestButton.prop('disabled', false);
     }
 
     function handleRequestClick(event) {
         var pickupLocation = WildRydes.map.selectedPoint;
         event.preventDefault();
-        requestUnicorn(pickupLocation);
+        requestRide(pickupLocation);
     }
 
     function animateArrival(callback) {
